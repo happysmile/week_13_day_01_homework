@@ -21,7 +21,7 @@ public class Raid {
     private String location;
 
     @Column(name = "loot")
-    private Long loot;
+    private int loot;
 
     @JsonIgnoreProperties(value="raids")
     @ManyToMany(cascade=CascadeType.ALL)
@@ -39,7 +39,7 @@ public class Raid {
             })
     private List<Pirate> pirates;
 
-    public Raid(String location, Long loot) {
+    public Raid(String location, int loot) {
         this.location = location;
         this.loot = loot;
         this.pirates = new ArrayList<Pirate>();
@@ -53,11 +53,11 @@ public class Raid {
         this.location = location;
     }
 
-    public Long getLoot() {
+    public int getLoot() {
         return loot;
     }
 
-    public void setLoot(Long loot) {
+    public void setLoot(int loot) {
         this.loot = loot;
     }
 
